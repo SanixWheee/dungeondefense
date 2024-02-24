@@ -24,11 +24,12 @@ public class Movement : MonoBehaviour
 
     private bool hasJumped;
 
-    [SerializeField] private Rigidbody2D rb; //SerializeField makes it visible in the unity editor, but its still considered a private variable
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+    //SerializeField makes it visible in the unity editor, but its still considered a private variable
+    [SerializeField] private Rigidbody2D rb; //RigidBody2d gives the object physics controls like velocity and gravity
+    [SerializeField] private Transform groundCheck; //transform is the xyz position of the object
+    [SerializeField] private LayerMask groundLayer; //something that you can add different layers to and only objects in those layers will be effected
 
-    void Start()
+    void Start() //called once the game starts
     {
         //initializing some variables + components needed
         rb = GetComponent<Rigidbody2D>();
@@ -41,9 +42,10 @@ public class Movement : MonoBehaviour
     }
 
 
-    void Update()
+    void Update() //updates the game every frame
     {
         time = Time.time;
+
         //Allows you to move right
         if (Input.GetKey(KeyCode.D))
         {
