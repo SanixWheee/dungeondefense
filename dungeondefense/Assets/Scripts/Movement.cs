@@ -116,7 +116,6 @@ public class Movement : MonoBehaviour
         {
             rb.gravityScale = 2f; //changes the gravity scale of the rigidbody attached to the gameobject, making jumping upwards feel more impactful
             rb.AddForce(transform.up * jumpingPower, ForceMode2D.Impulse); //adds a force upwards
-            Debug.Log(rb.velocity.y); //how you print to the console in unity
             hasJumped = false;
 
         }
